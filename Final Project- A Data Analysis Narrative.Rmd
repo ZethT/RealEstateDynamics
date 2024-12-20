@@ -1,0 +1,102 @@
+---
+title: "Final Project: A Data Analysis Narrative"
+date: ""
+format: 
+  html:
+    embed-resources: true
+    code-tools: true
+    code-summary: "Code"
+---
+ 
+ 
+## Overview
+
+MAIN RESEARCH QUESTION
+  How have real estate market dynamics shifted across different regions in recent years, and what factors influence regional market   competitiveness?
+DATASET DESCRIPTION
+  
+To begin your project, identify a research topic and dataset. In particular, your project should meet the following minimum requirements:
+```{r}
+# Read the file
+data <- read.delim("/Users/grid/Desktop/SJSU/FALL2024/MATH167R/Data/state_market_tracker.csv", sep="\t", header=FALSE)
+
+column_names <- strsplit(as.character(data[1,]), "\\.")[[1]]
+colnames(data) <- column_names
+
+# Remove the first row (which contained the column names)
+data <- data[-1,]
+
+# View the first few rows of the data
+head(data)
+
+
+
+
+```
+### Submission
+
+You will submit a 2-3 page project proposal (pdf format) with the following information:
+
+- Your project title
+- Your main research question/topic of interest.
+- A brief description of your dataset (where it is from, how it can be obtained, why you chose it). 
+- A **data dictionary** in the following format (if there are more than 10 variables, you can choose the 10 variables that interest you most):
+
+    | Variable name | Variable type | Description   |
+    |---------------|---------------|---------------|
+    | ex. `dob`     | Date          | date of birth |
+    | ex. `city`    | character     | city of birth |
+    | . . .         | . . .         | . . .         |
+
+- An overview of your subquestions, with explicit reference to the relevant variables in your dataset.
+- A list of three to five outside references you plan to consult for background research on your topic.
+- Any questions you have for me.
+
+You are encouraged to meet with the instructor to discuss potential project topics and datasets **before** beginning your project proposal. If you wish to use a dataset discussed in class, you should obtain instructor approval.
+
+## Part Two: Inferential analysis (15 points), due 11/25
+
+For at least one of your subquestions, perform an inferential analysis (ex. hypothesis test, confidence interval, linear regression) and discuss your findings. For the second checkpoint assignment, you will prepare a written report on your inferential analysis. You will receive instructor feedback on your writeup, which you should incorporate into your final report. 
+
+### Submission
+
+You will submit a 1-2 page writeup (pdf format) with the following information:
+
+- An introduction of the subquestion you are exploring via this inferential analysis.
+- A description of your data analysis plan, including any steps needed to clean or transform the data and the method you intend to use.
+- An outline of any assumptions needed for your method to be valid. For each assumption, discuss why your data satisfies this assumption.
+- A description of the results of your analysis and interpretation of the results.
+
+## Part Three: Final Report (70 points),  due 12/9
+
+Finally, you will submit a written final report on your project. This final report will include the inferential analysis (part two) and summarize your work and findings.
+    
+### Submission
+
+You will submit a written report (pdf format). There is no explicit page limit/requirement, but a report of 5-7 single-spaced pages, not including figures/references/code, should be sufficient for most projects (longer may be necessary if you are working in a group). The target audience of your report is a classmate who may not be familiar with your selected dataset or topic.
+
+The structure of your report may depend on your selected project topic, but should include the following information at a minimum.
+
+-   **Introduction and background**: 
+    - Introduce main topic, your dataset, and subquestions of interest. 
+    - Discuss any previous research/findings or relevant context on your question of interest. 
+-   **Exploratory data analysis**: 
+    - For each of your subquestions, generate at least one data visualization or descriptive statistic. In particular, if you work in a group of two, you must explore at least **four** subquestions. If you work in a group of three, you should explore at least **five** subquestions. 
+    - Discuss and interpret your findings.
+-   **Inferential analysis**:
+    - For at least one of your subquestions, you should also perform a basic statistical analysis (ex. confidence interval, hypothesis test, linear regression). 
+    - Discuss and interpret your findings.
+-   **Conclusions and future questions**: 
+    - Summarize your conclusions and discuss any questions you might interested in exploring in the future. 
+    - Discuss any potential limitations of your analysis. Were there missing data in your dataset? Are there additional data or variables that would be helpful for answering your questions.
+-    **Code appendix**: Your report should not include any code in the main text. All code should be included in an appendix at the end of your report. All code should be appropriately commented and styled according to one of the style guides discussed in class.
+
+
+## Part Four: Reflection and Self-evaluation (5 points), due 12/9
+
+You will complete a 1-2 page reflection and self-evaluation on your work for this final project and course. Briefly answer the following questions:
+
+1. If you worked with a partner/group, what were your specific responsibilities for the project proposal, report, and presentation?
+2. Describe at least one aspect of your work for this class of which you are proud. Are there any ways in which you grew this semester?
+3. Describe at least one aspect of your work which you could have improved.  
+4. Are there other topics related to programming in R and data science that you wish we had covered?
